@@ -1,6 +1,7 @@
 var http = require("http");
 require("dotenv").config();
 const confg = process.env;
+console.log(confg.INTERVAL);
 setInterval(() => {
   http
     .get(confg.URL, (res) => {
@@ -28,4 +29,4 @@ setInterval(() => {
     .on("error", (e) => {
       console.error(`Got error: ${e.message}`);
     });
-}, confg.INTERVAL); // every 20 minutes (1200000)
+}, confg.INTERVAL?confg.INTERVAL:300000); // every 20 minutes (1200000)
