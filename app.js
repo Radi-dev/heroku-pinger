@@ -1,8 +1,9 @@
 var http = require("http");
-const confg = require("./config.json");
-setInterval(function () {
+require("dotenv").config();
+const confg = process.env;
+setInterval(() => {
   http
-    .get(confg.url, (res) => {
+    .get(confg.URL, (res) => {
       const { statusCode } = res;
       const contentType = res.headers["content-type"];
 
@@ -27,4 +28,4 @@ setInterval(function () {
     .on("error", (e) => {
       console.error(`Got error: ${e.message}`);
     });
-}, confg.interval); // every 20 minutes (1200000)
+}, confg.INTERVAL); // every 20 minutes (1200000)

@@ -1,0 +1,16 @@
+{
+  "name": "heroku-pinger",
+  "version": "1.0.0",
+  "description": "ping heroku apps to prevent sleep",
+  "main": "app.js",
+  "repository": "https://github.com/Radi-dev/heroku-pinger.git",
+  "author": "Radi <evaradi18@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.2"
+  }
+}
